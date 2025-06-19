@@ -14,14 +14,13 @@ app = FastAPI()
 templates = Jinja2Templates(directory="app/templates")
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
-# Load the model and labels
-# Web UI root
+# Web UI root --> for uploading images.
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse("upload.html", {"request": request})
 
 
-# JSON prediction API (for Postman.)
+# JSON prediction API --> for Postman.
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(file: UploadFile = File(...)):
     contents = await file.read()
