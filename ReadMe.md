@@ -52,7 +52,7 @@ app/
 
 1. **Clone the repo:**
 ```bash
- git clone https://github.com/harizonelopez/.git
+ git clone https://github.com/harizonelopez/AI_FASTAPI-project.git
  cd AI_FASTAPI project
 ```
 
@@ -74,9 +74,8 @@ app/
 
 ## 👨‍💻 Author
 
-Made with 💙 by [HarizoneLopez]
-📫 Reach me at: harizonelopez23@gmail.com
-🌍 LinkedIn | GitHub
+- Made with 💙 by HarizoneLopez
+- 📫 Reach me at: harizonelopez23@gmail.com
 
 
 ## 📄 License
