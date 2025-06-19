@@ -1,0 +1,48 @@
+/* Upload page template styles */
+
+body {
+    background-color: #0a0f1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: #111927;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+h2 {
+    color: #00bcd4;
+    margin-bottom: 25px;
+}
+
+.form-control {
+    background-color: #1e293b;
+    border: 1px solid #00bcd4;
+    color: #fff;
+}
+
+.form-control:focus {
+    border-color: #03e9f4;
+    box-shadow: 0 0 0 0.2rem rgba(3, 233, 244, 0.25);
+}
+
+.btn-primary {
+    background-color: #00bcd4;
+    border-color: #00bcd4;
+}
+
+.btn-primary:hover {
+    background-color: #03e9f4;
+    border-color: #03e9f4;
+}
+
+#loader {
+    margin-top: 20px;
+}
