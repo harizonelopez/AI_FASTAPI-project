@@ -27,24 +27,6 @@
 - **Bootstrap 5** – UI design
 - **Jinja2** – templating engine
 
----
-
-## 📂 Project Structure
-
-app/
-│
-├── templates/
-│ ├── upload.html
-│ └── result.html
-│
-├── static/
-│ ├── upload.css
-│ ├── result.css
-│ └── uploads/ ← temporarily stores uploaded images
-│
-├── schemas.py ← Pydantic response model
-├── model_handler.py ← Image transform & prediction logic
-└── main.py ← FastAPI routes and core app
 
 ---
 
