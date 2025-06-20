@@ -45,3 +45,15 @@ h2 {
 #loader {
     margin-top: 20px;
 }
+
+/* mobile responsiveness styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    img#preview {
+        max-width: 100%;
+        height: auto;
+    }
+}
