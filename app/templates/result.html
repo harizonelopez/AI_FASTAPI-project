@@ -23,13 +23,17 @@
 
             <!-- Label -->
             <p>
-                <strong><i class="bi bi-tags-fill text-info"></i> Label:</strong>
+                <strong>
+                    <i class="bi bi-tags-fill text-info" data-bs-toggle="tooltip" title="Predicted Class Label"></i> Label:
+                </strong>
                 <span class="badge bg-info text-dark fs-6">{{ label }}</span>
             </p>
 
             <!-- Confidence -->
             <p>
-                <strong><i class="bi bi-graph-up-arrow text-warning"></i> Confidence:</strong>
+                <strong>
+                    <i class="bi bi-graph-up-arrow text-warning" data-bs-toggle="tooltip" title="Model Confidence Score"></i> Confidence:
+                </strong>
                 {% if confidence >= 80 %}
                     <span class="badge bg-success fs-6">{{ confidence }}%</span>
                 {% elif confidence >= 50 %}
@@ -57,7 +61,7 @@
                 </div>
             </div>
             <!-- Try again button -->
-            <a href="/" class="btn btn-outline-success mt-4">
+            <a href="/" class="btn btn-outline-success mt-4" data-bs-toggle="tooltip" title="Upload another image to classify">
                 <i class="bi bi-arrow-repeat"></i> Try Another Image
             </a>
         </div>
@@ -73,5 +77,11 @@
                 bar.style.width = confidence + '%';
             }, 200);
         });
+    </script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => 
+            new bootstrap.Tooltip(tooltipTriggerEl)
+        );
     </script>
 </html>
