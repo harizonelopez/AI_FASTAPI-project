@@ -3,6 +3,3 @@ __pycache__/
 
 # Ignore the uploaded files
 app/static/uploads/
-
-# Ignore the trained image files directory
-app/imagenet_labels.txt/
