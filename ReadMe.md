@@ -49,9 +49,9 @@
 ```
 
 4. **Visit**
-```bash
- http://127.0.0.1:8000
-```
+ Open your browser and go to
+
+`http://127.0.0.1:8000`
 
 
 ## 👨‍💻 Author
