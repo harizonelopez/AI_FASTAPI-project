@@ -14,7 +14,7 @@ app = FastAPI()
 templates = Jinja2Templates(directory="app/templates")
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
-# Web UI root --> for uploading images.
+# Web UI root for uploading images.
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse("upload.html", {"request": request})
