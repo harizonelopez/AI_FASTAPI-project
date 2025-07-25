@@ -36,7 +36,7 @@ async def predict_web(request: Request, file: UploadFile = File(...)):
     image = Image.open(io.BytesIO(contents)).convert("RGB")
     label, confidence = predict_image(image)
 
-    # Save uploaded image --> 'temporarily'
+    # Save uploaded image 'temporarily'
     filename = f"{uuid4().hex}.png"
     img_path = f"app/static/uploads/{filename}"
     os.makedirs(os.path.dirname(img_path), exist_ok=True)
