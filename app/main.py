@@ -20,7 +20,7 @@ async def home(request: Request):
     return templates.TemplateResponse("upload.html", {"request": request})
 
 
-# JSON prediction API --> for Postman.
+# JSON prediction API for Postman.
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(file: UploadFile = File(...)):
     contents = await file.read()
