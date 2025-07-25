@@ -21,7 +21,7 @@ async def home(request: Request):
 
 
 # JSON prediction API for Postman.
-@app.post("/predict", response_model=PredictionResponse)
+@app.post("/predict", response_model=PredictionResponse) 
 async def predict(file: UploadFile = File(...)):
     contents = await file.read()
     image = Image.open(io.BytesIO(contents)).convert("RGB")
