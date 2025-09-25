@@ -19,7 +19,6 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 async def home(request: Request):
     return templates.TemplateResponse("upload.html", {"request": request})
 
-
 # JSON prediction API --> for Postman.
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(file: UploadFile = File(...)):
@@ -27,7 +26,6 @@ async def predict(file: UploadFile = File(...)):
     image = Image.open(io.BytesIO(contents)).convert("RGB")
     label, confidence = predict_image(image)
     return {"label": label, "confidence": confidence}
-
 
 # Web UI result page
 @app.post("/predict_web", response_class=HTMLResponse)
