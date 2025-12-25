@@ -3,3 +3,6 @@ __pycache__/
 
 # Ignore the uploaded files
 app/static/uploads/
+
+/.idea/
+.vscode/
