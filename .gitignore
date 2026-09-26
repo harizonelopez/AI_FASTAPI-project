@@ -6,5 +6,5 @@ app/static/uploads/
 
 /.idea/
 .vscode/
-env/
+.env/
 venv/

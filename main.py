@@ -46,3 +46,11 @@ async def predict_web(request: Request, file: UploadFile = File(...)):
         "confidence": round(confidence * 100, 2),
         "image_url": f"/static/uploads/{filename}"
     })
+
+# Check the life of the endpoints API
+@app.get("/health")
+async def health_check():
+    return {
+        "status": "healthy",
+        "service": "AI Image Classifier"
+    }
