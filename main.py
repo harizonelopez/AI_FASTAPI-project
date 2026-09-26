@@ -24,17 +24,17 @@ async def home(request: Request):
 async def predict(file: UploadFile = File(...)):
     contents = await file.read()
     image = Image.open(io.BytesIO(contents)).convert("RGB")
-    label, confidence = predict_image(image)
-    return {"label": label, "confidence": confidence}
+    results = predict_image(image)
+    return {"predictions": results}
 
-# Web UI result page
+# Web UI prediction API --> for web interface.
 @app.post("/predict_web", response_class=HTMLResponse)
 async def predict_web(request: Request, file: UploadFile = File(...)):
     contents = await file.read()
     image = Image.open(io.BytesIO(contents)).convert("RGB")
-    label, confidence = predict_image(image)
+    results = predict_image(image)
 
-    # Save uploaded image --> 'temporarily'
+    # Save uploaded image temporarily
     filename = f"{uuid4().hex}.png"
     img_path = f"app/static/uploads/{filename}"
     os.makedirs(os.path.dirname(img_path), exist_ok=True)
@@ -42,8 +42,8 @@ async def predict_web(request: Request, file: UploadFile = File(...)):
 
     return templates.TemplateResponse("result.html", {
         "request": request,
-        "label": label,
-        "confidence": round(confidence * 100, 2),
+        "predictions": results,               # list of top-3
+        "top_prediction": results[0],         # for easy access
         "image_url": f"/static/uploads/{filename}"
     })
 
